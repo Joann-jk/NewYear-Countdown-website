@@ -12,6 +12,12 @@ body{
     background-size:contain;
     background-image: url('https://i.pinimg.com/originals/05/51/08/05510844025912b4e0fea9851ff3cc7d.jpg');
 }
+.cont{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 h2{
     color: white;
@@ -22,7 +28,52 @@ h2{
     font-size: 5em;
     color: beige;
     font-weight: bold;
+    position: relative;
+    z-index:1;
 }
+
+.loader {
+    border: 0 solid transparent;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    border: 0 solid transparent;
+    z-index: 0;
+   }
+   
+   .loader::before,
+   .loader::after {
+    content: '';
+    border: 7px solid #ccc;
+    border-radius: 50%;
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    animation: loader 2s linear infinite;
+    opacity: 0;
+   }
+   
+   .loader::before {
+    animation-delay: 1s;
+   }
+   
+   @keyframes loader {
+    0% {
+     transform: scale(1);
+     opacity: 0;
+    }
+   
+    50% {
+     opacity: 1;
+    }
+   
+    100% {
+     transform: scale(0);
+     opacity: 0;
+    }
+   }
+
 .countdown {
     margin: 30px;
     background-color: rgba(48, 47, 48, 0.27);
